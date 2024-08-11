@@ -20,9 +20,9 @@ To get started with any of the projects, follow the instructions in the respecti
 
 ## Projects
 
-### go-web-app: devOpsify a Golang Web Application
+### go-web-app: DevOpsify a Golang Web Application
 - containerized the go web application use Using multistage docker build.
 - Develop k8s manifests for deployments, service, ingress.
 - Write helm charts
-- Github Action for CI
-- Argo CS for CD
+- Github Action for continuous integration
+- Argo CD for continuous delivery
