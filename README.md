@@ -7,7 +7,7 @@ Welcome to the **DevOps Projects Repository**! This repository contains a curate
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Projects](#projects)
-  - [Project 1: go-web-app](#go-web-app-devopsify-a-golang-web-application)
+  - [Project 1: go-web-app](#project-1-go-web-app)
 
 ## Introduction
 
@@ -19,8 +19,7 @@ To get started with any of the projects, follow the instructions in the respecti
 
 ## Projects
 
-### Project 1: DevOpsify a Golang Web Application
-
+### Project 1: go-web-app
 - Containerize the Go web application using a multistage Docker build.
 - Develop Kubernetes manifests for deployments, services, and ingress.
 - Write Helm charts.
