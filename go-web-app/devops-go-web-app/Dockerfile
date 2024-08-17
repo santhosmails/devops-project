@@ -1,9 +1,11 @@
 # Builder for compiling the source code
 FROM golang:1.22 AS builder
 WORKDIR /app
-COPY . .
+COPY go.mod .
 RUN go mod download
-RUN go build -o main .
+COPY . .
+# CGO_ENABLED=0 and GOOS=linux to ensure that the Go binary is statically linked and compatible with the distroless image
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
 # Final Stage - Distroless image
 FROM gcr.io/distroless/base

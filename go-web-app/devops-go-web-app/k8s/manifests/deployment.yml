@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: password-app
-        image: santhosmails/devops-go-web-app:v1
+        image: santhosmails/devops-go-web-app:v2
         ports:
         - containerPort: 8080

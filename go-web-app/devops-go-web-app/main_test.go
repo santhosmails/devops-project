@@ -13,11 +13,11 @@ func TestRootHandler(t *testing.T) {
 	}
 
 	rr := httptest.NewRecorder()
-	handler := http.FileServer(http.Dir("./non"))
+	handler := http.StripPrefix("/", http.FileServer(http.Dir("./password")))
 
 	handler.ServeHTTP(rr, req)
 
-	if status := rr.Code; status != http.StatusNotFound {
+	if status := rr.Code; status != http.StatusOK {
 		t.Errorf("handler returned wrong status code: got %v want %v",
 			status, http.StatusOK)
 	}

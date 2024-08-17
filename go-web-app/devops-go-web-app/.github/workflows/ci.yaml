@@ -11,6 +11,9 @@ on:
       - 'helm/**'
       - 'k8s/**'
       - 'README.md'
+      - 'ingress-controller/**'
+      - 'gitops/**'
+      - 'password/images/web.png'
 
 jobs:
 
@@ -68,7 +71,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-go-web-app:${{github.run_id}}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
@@ -87,8 +90,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.email "abhishek@gmail.com"
-        git config --global user.name "Abhishek Veeramalla"
+        git config --global user.email "santhosmails@gmail.com"
+        git config --global user.name "Santhosh Kumar S"
         git add helm/go-web-app-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push

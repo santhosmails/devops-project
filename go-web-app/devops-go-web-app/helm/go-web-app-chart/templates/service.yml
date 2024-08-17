@@ -4,10 +4,12 @@ kind: Service
 metadata:
   name: go-web-app-service
 spec:
-  type: NodePort
+  type: {{ .Values.service.type }}
   selector:
     app: go-web-app
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30007
+      {{- if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.nodeport }}
+      {{- end }}

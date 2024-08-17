@@ -4,10 +4,9 @@ kind: Service
 metadata:
   name: go-web-app-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: go-web-app
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30007
